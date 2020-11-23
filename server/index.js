@@ -1,24 +1,24 @@
+require('dotenv').config();
 const axios = require('axios');
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const compression = require('compression');
-const app = express();
-const PORT = 4206;
-const APIURL = 'http://3.137.191.193'
+const APP = express();
+const PORT = process.env.PORT || 4206;
+const APIURL = process.env.API_URL;
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(compression())
-app.use(express.static(path.join(__dirname, '../dist')));
+APP.use(bodyParser.json());
+APP.use(bodyParser.urlencoded({ extended: true }));
+APP.use(compression())
+APP.use(express.static(path.join(__dirname, '../dist')));
 
-app.get('/', (req, res) => {
+APP.get('/', (req, res) => {
   res.set('Content-Encoding', 'gzip')
   res.status(200).send('./index.html')
 });
 
-app.get('/catwalk/:id', (req, res) => {
-  console.log(req.params)
+APP.get('/catwalk/:id', (req, res) => {
   var id = req.params.id
   const params = [
     axios.get(`${APIURL}/products/${id}`),
@@ -46,8 +46,7 @@ app.get('/catwalk/:id', (req, res) => {
     })
 });
 
-app.post('/catwalk/interactions', (req, res) => {
-  console.log(req.body)
+APP.post('/catwalk/interactions', (req, res) => {
   return axios.post(`${APIURL}/interactions`, req.body)
     .then((response) => {
       res.send('interaction posted');
@@ -60,12 +59,10 @@ app.post('/catwalk/interactions', (req, res) => {
 
 //Q&A ROUTES//
 
-app.get('/catwalk/qa/questions/:id', (req, res) => {
-  console.log(req.params)
+APP.get('/catwalk/qa/questions/:id', (req, res) => {
   var id = req.params.id
   axios.get(`${APIURL}/qa/questions/?product_id=${id}&count=50`)
     .then((response) => {
-      console.log('question get good')
       res.send(response.data);
     })
     .catch((err) => {
@@ -74,11 +71,9 @@ app.get('/catwalk/qa/questions/:id', (req, res) => {
     })
 });
 
-app.post('/catwalk/qa/questions', (req, res) => {
-  console.log(req.body)
+APP.post('/catwalk/qa/questions', (req, res) => {
   axios.post(`${APIURL}/qa/questions`, req.body)
     .then((response) => {
-      console.log('question posted')
       res.send('question posted');
     })
     .catch((err) => {
@@ -87,12 +82,10 @@ app.post('/catwalk/qa/questions', (req, res) => {
     })
 });
 
-app.put('/catwalk/qa/questions/helpful/:id', (req, res) => {
-  console.log(req.params)
+APP.put('/catwalk/qa/questions/helpful/:id', (req, res) => {
   var questionId = req.params.id;
   return axios.put(`${APIURL}/qa/questions/${questionId}/helpful`)
     .then((response) => {
-      console.log('question marked helpful')
       res.send('question marked helpful');
     })
     .catch((err) => {
@@ -101,12 +94,10 @@ app.put('/catwalk/qa/questions/helpful/:id', (req, res) => {
     })
 });
 
-app.put('/catwalk/qa/questions/report/:id', (req, res) => {
-  console.log(req.params)
+APP.put('/catwalk/qa/questions/report/:id', (req, res) => {
   var questionId = req.params.id;
   return axios.put(`${APIURL}/qa/questions/${questionId}/report`)
     .then((response) => {
-      console.log('question reported')
       res.send('question reported');
     })
     .catch((err) => {
@@ -115,13 +106,10 @@ app.put('/catwalk/qa/questions/report/:id', (req, res) => {
     })
 });
 
-app.post('/catwalk/qa/answers/:id', (req, res) => {
-  console.log(req.params)
+APP.post('/catwalk/qa/answers/:id', (req, res) => {
   var questionId = req.params.id
-  console.log(req.body)
   return axios.post(`${APIURL}/qa/questions/${questionId}/answers`, req.body)
     .then((response) => {
-      console.log('answer posted')
       res.send('answer posted');
     })
     .catch((err) => {
@@ -130,12 +118,10 @@ app.post('/catwalk/qa/answers/:id', (req, res) => {
     })
 });
 
-app.put('/catwalk/qa/answers/helpful/:id', (req, res) => {
-  console.log(req.params)
+APP.put('/catwalk/qa/answers/helpful/:id', (req, res) => {
   var answerId = req.params.id;
   return axios.put(`${APIURL}/qa/answers/${answerId}/helpful`)
     .then((response) => {
-      console.log('answer marked helpful')
       res.send('answer marked helpful');
     })
     .catch((err) => {
@@ -144,12 +130,10 @@ app.put('/catwalk/qa/answers/helpful/:id', (req, res) => {
     })
 });
 
-app.put('/catwalk/qa/answers/report/:id', (req, res) => {
-  console.log(req.params)
+APP.put('/catwalk/qa/answers/report/:id', (req, res) => {
   var answerId = req.params.id;
   return axios.put(`${APIURL}/qa/answers/${answerId}/report`)
     .then((response) => {
-      console.log('answer reported', response)
       res.send('answer reported');
     })
     .catch((err) => {
@@ -158,6 +142,6 @@ app.put('/catwalk/qa/answers/report/:id', (req, res) => {
     })
 });
 
-app.listen(PORT, () => {
+APP.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
 });
