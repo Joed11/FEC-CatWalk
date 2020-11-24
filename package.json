@@ -20,10 +20,12 @@
     "watch-css": "node-sass --watch ./stylesheets -o ./dist/stylesheets --output-style compressed",
     "build-prod": "webpack -p --mode production -w",
     "test": "jest --collect-coverage",
-    "start": "nodemon ./server/index.js"
+    "start": "nodemon ./server/index.js",
+    "build": "node-sass ./stylesheets -o ./dist/stylesheets --output-style compressed && webpack -p --mode production"
   },
   "dependencies": {
     "axios": "^0.20.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jquery": "^3.5.1",
     "lodash": "^4.17.20",
@@ -68,5 +70,8 @@
     "terser-webpack-plugin": "^4.2.3",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
+  },
+  "engines": {
+    "node": "12.18.3"
   }
 }
