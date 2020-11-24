@@ -47,7 +47,7 @@ const ImageGallery = (props) => {
           alt="thumbnail"
           style={
             mainImage === image.url
-              ? { border: '2px solid black', transform: 'translateX(5%)' }
+              ? { border: '1px solid black', transform: 'translateX(5%)' }
               : { border: '0px' }
           }
         />

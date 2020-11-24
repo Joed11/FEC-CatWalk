@@ -70,7 +70,7 @@ const Characteristics = (props) => {
     returner.push(
       <div>
         <b>Fit</b>
-        <IndividualCharacteristics key='fit' value={Fit.value} item='Fit' />
+        <IndividualCharacteristics key='fit' value={Fit.value} item='Fit'/>
       </div>
     );
   }
@@ -139,24 +139,21 @@ const IndividualCharacteristics = (props) => {
   const colLeft = {
     gridColumnStart: 1,
     gridColumnEnd: 33,
-    height: 50,
+    height: '2vw',
     backgroundImage: 'url(https://i.ibb.co/kc61Vkh/img.png)',
-
   };
 
   const colCenter = {
     gridColumnStart: 34,
     gridColumnEnd: 66,
-    height: 50,
+    height: '2vw',
     backgroundImage: 'url(https://i.ibb.co/kc61Vkh/img.png)',
-
   };
   const colRight = {
     gridColumnStart: 67,
     gridColumnEnd: 99,
-    height: 50,
+    height: '2vw',
     backgroundImage: 'url(https://i.ibb.co/kc61Vkh/img.png)',
-
   };
 
   const textCenter = {
@@ -175,20 +172,20 @@ const IndividualCharacteristics = (props) => {
     borderLeft: '0.5vw solid transparent',
     borderRight: '0.5vw solid transparent',
     borderTop: '0.7vw solid #696969',
-
+    transform: 'translateY(1.3vw)'
   };
 
   return (
-    <div style={parent}>
+    <div className="single-char-stat" style={parent}>
         <div style={triangleDown}></div>
       <div style={colLeft}>
-        <p>{firstDescription}</p>
+        <div className="char-label" >{firstDescription}</div>
       </div>
       <div style={colCenter}>
-        <p style={textCenter}>{middleDescription}</p>
+        <div className="char-label" style={textCenter}>{middleDescription}</div>
       </div>
       <div style={colRight}>
-        <p style={textRight}>{lastDescription}</p>
+        <div className="char-label" style={textRight}>{lastDescription}</div>
       </div>
     </div>
   );
