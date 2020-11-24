@@ -10,22 +10,10 @@ First install dependencies:
 npm install
 ```
 
-To compile SASS:
+Build for production:
 
 ```sh
-npm run build-css
-```
-
-To create a production build:
-
-```sh
-npm run build-prod
-```
-
-To create a development build:
-
-```sh
-npm run build-dev
+npm run build
 ```
 
 ## Running
