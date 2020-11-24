@@ -262,7 +262,6 @@ const ImageGallery = (props) => {
             $('.image-gallery-main-box').animate(
               {
                 display: 'flex',
-                'background-color': 'lightgrey',
                 width: '100%',
                 'z-index': '1',
               },

@@ -34,11 +34,11 @@ const ProductInformation = (props) => {
     <div className="product-information-box" >
       <div className="product-information-star-review-box" style={props.reviews.length === 0 ? {visibility: 'hidden'} : {visibility: 'visible'}}>
         <StarRating number={rating} />
-        <span className='product-information-review'>
+        <div className='product-information-review'>
           <a href="#start-of-ratings">
             Read all {props.reviews.length} Reviews
           </a>
-        </span>
+        </div>
       </div>
       <p className="product-category">{props.primaryProduct.category}</p>
       <p className="product-name">{props.primaryProduct.name}</p>
