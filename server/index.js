@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const compression = require('compression');
 const APP = express();
-const PORT = process.env.PORT || 4206;
+const PORT = process.env.PORT || 3005;
 const APIURL = process.env.API_URL;
 
 APP.use(bodyParser.json());
