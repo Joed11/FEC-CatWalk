@@ -7,7 +7,7 @@ import '../../../dist/stylesheets/OverviewStyles.css';
 
 var Overview = () => {
   return (
-    <div>
+    <div className="overview-widget">
       <p className='overview-component'>Overview</p>
       <div className="overview-main-box">
         <div className="overview-left-box">

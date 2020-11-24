@@ -1,16 +1,21 @@
 @import 'Head';
 
-.topLevelRatingsAndReviews {
-  display: grid;
-  grid-template-columns: 1fr 2.4fr;
+.ratings-widget {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  width: 72vw;
   margin: auto;
-  margin-top: 1vw;
+  margin-top: 2vw;
   margin-bottom: 2vw;
-  margin-left: 15vw;
-  margin-right: 15vw;
   font-family: $MainFont;
   font-size: $FontS;
   color: $ColorDarkGray;
+}
+
+.topLevelRatingsAndReviews {
+  display: grid;
+  grid-template-columns: 1fr 2.4fr;
 }
 
 .reviews-header {

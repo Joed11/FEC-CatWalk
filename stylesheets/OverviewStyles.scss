@@ -1,11 +1,15 @@
 @import 'Head';
 
-.overview-component {
-  font: $MainFont;
-  font-size: $FontXL;
+.overview-widget {
+  display: block;
   position: relative;
-  left: 10%;
-  margin-block-end: 0em;
+  box-sizing: border-box;
+  width: 72vw;
+  margin: auto;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+  font-family: $MainFont;
+  font-size: $FontXL;
 }
 
 // Style Selector Begins
