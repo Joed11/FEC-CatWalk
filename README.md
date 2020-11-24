@@ -18,7 +18,13 @@ npm run build
 
 ## Running
 
-Open the file `dist/index.html` in your browser
+Define a port in the environment.  Server file will default to 3005 if none is provided.
+
+Start the server:
+
+```sh
+npm start
+```
 
 ## Testing
 
