@@ -15,13 +15,15 @@
   },
   "scripts": {
     "clean": "rm dist/bundle.js",
-    "build-dev": "webpack -d --mode development -w",
+    "build": "node-sass ./stylesheets -o ./dist/stylesheets --output-style compressed && webpack -p --mode production",
     "build-css": "node-sass ./stylesheets -o ./dist/stylesheets --output-style compressed",
-    "watch-css": "node-sass --watch ./stylesheets -o ./dist/stylesheets --output-style compressed",
+    "build-dev": "webpack -d --mode development -w",
     "build-prod": "webpack -p --mode production -w",
-    "test": "jest --collect-coverage",
-    "start": "nodemon ./server/index.js",
-    "build": "node-sass ./stylesheets -o ./dist/stylesheets --output-style compressed && webpack -p --mode production"
+    "watch-css": "node-sass --watch ./stylesheets -o ./dist/stylesheets --output-style compressed",
+    "test": "jest",
+    "test-cov": "jest --collect-coverage",
+    "start": "node ./server/index.js",
+    "start-dev": "nodemon ./server/index.js"
   },
   "dependencies": {
     "axios": "^0.20.0",
