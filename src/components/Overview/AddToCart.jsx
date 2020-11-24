@@ -24,30 +24,31 @@ const AddToCart = (props) => {
   });
 
   renderSkus.unshift(
-    <option value="" key={'default'}>
+    <option aria-label="select size" value="" key={'default'}>
       Select Size
     </option>
   );
 
   const [quantity, setQuantity] = useState('');
-  const [size, setSize] = useState('');  
+  const [size, setSize] = useState('');
 
   var renderQuantity = [];
   var maxQuantity = quantity > 15 ? 15 : quantity;
 
   for (var i = 1; i <= maxQuantity; i++) {
-    renderQuantity.push(<option key={i}>{i}</option>);
+    renderQuantity.push(<option label={`${i}`} key={i}>{i}</option>);
   }
 
   useEffect(() => {
     setQuantity('');
     setSize('');
   }, [props.currentStyle.style_id]);
-  
+
   return (
-    <div>
+    <div className="add-cart-container">
       <select
         defaultValue=''
+        aria-label='Select Size'
         className="size-selector"
         disabled={renderSkus.length === 1 ? true : false}
         onChange={(e) => {
@@ -55,18 +56,18 @@ const AddToCart = (props) => {
         }}
       >
         {renderSkus.length === 1 ? (
-          <option key={'oos'}>OUT OF STOCK</option>
+          <option label='out of stock' key={'oos'}>OUT OF STOCK</option>
         ) : (
           renderSkus
         )}
       </select>
       <select
         className="quantity-selector"
+        aria-label='Select Quantity'
         disabled={quantity === '' ? true : false}
       >
-        {quantity === '' ? <option key={'none'}>-</option> : renderQuantity}
+        {quantity === '' ? <option label='none' key={'none'}>-</option> : renderQuantity}
       </select>
-      <p></p>
       <button className="add-to-bag">ADD TO BAG</button>
     </div>
   );

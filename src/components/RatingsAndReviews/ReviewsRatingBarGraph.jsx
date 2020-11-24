@@ -39,7 +39,8 @@ const BarGraphComponents = (props) => {
     width: '11vw',
     backgroundColor: '#e0e0de',
     borderRadius: 30,
-    marginTop: '8px',
+    marginTop: 'auto',
+    marginBottom: 'auto'
   };
 
   const fillerStyles = {

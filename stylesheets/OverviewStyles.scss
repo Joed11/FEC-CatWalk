@@ -1,52 +1,72 @@
 @import 'Head';
 
-.overview-component {
-  font: $MainFont;
-  font-size: $FontXL;
+.overview-widget {
+  display: block;
   position: relative;
-  left: 10%;
-  margin-block-end: 0em;
+  box-sizing: border-box;
+  width: 72vw;
+  margin: auto;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+  font-family: $MainFont;
+  font-size: $FontXL;
 }
 
 // Style Selector Begins
 
 .style-grid {
   display: grid;
-  grid-template-rows: 90px 90px;
-  grid-template-columns: 90px 90px 90px 90px;
-  row-gap: 1em;
-  column-gap: 1em;
+  grid-template-rows: 6vw 6vw;
+  grid-template-columns: 6vw 6vw 6vw 6vw;
+  row-gap: .15vw;
+  column-gap: .15vw;
 }
 
 .style-grid-image {
   position: relative;
   border-radius: 50%;
   object-fit: cover;
-  width: 90px;
-  height: 90px;
-  border: 2px solid $ColorMediumGray;
+  width: 5vw;
+  height: 5vw;
+  border: 1px solid $ColorMediumGray;
 }
 
 .style-grid-item-checkmark {
   display: block;
   position: absolute;
   z-index: 1;
-  width: 20px;
-  transform: translateX(350%);
+  width: 1.75vw;
+  transform: translateX(210%) translateY(-30%)
 }
 
 .style {
-  font: $MainFont;
+  font-family: $MainFont;
   font-weight: bold;
   font-size: $FontM;
   margin-block-start: 0em;
   margin-block-end: 0em;
+  margin-bottom: 1vw;
 }
 
 .style-name {
-  font: $MainFont;
+  font-family: $MainFont;
   font-weight: normal;
   font-size: $FontM;
+}
+
+.style-grid-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+}
+
+.style-grid-arrow-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1vw;
 }
 
 // Style Selector Ends
@@ -54,49 +74,48 @@
 // Image Gallery Contents Begins
 
 .image-gallery-item {
-  // margin-left: 20%;
   padding-top: 10%;
 }
 
 .image-gallery-thumbnail {
   border-radius: 0%;
   object-fit: cover;
-  width: 80px;
-  height: 80px;
+  width: 4vw;
+  height: 4vw;
 }
 
 .thumbnail-selection {
   height: 0px;
-  width: 80px;
+  width: 6vw;
   border: 1px solid black;
 }
 
 .image-gallery-grid {
   object-fit: contain;
   z-index: 2;
-  margin-left: 10%;
 }
 
-.image-gallery-scroll-up {
-  position: relative;
-  left: 41%;
-  top: 2%;
+div.image-gallery-scroll-up img {
+  width: 2vw;
 }
 
-.image-gallery-scroll-down {
-  position: relative;
-  left: 41%;
-  top: 0%;
+div.image-gallery-scroll-down img {
+  width: 2vw;
 }
 
 .image-gallery-thumbnail-column {
-  margin-left: 2%;
+  align-self: flex-start;
+  margin-left: 1vw;
+  margin-right: 1.5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .image-gallery-main-image {
   object-fit: contain;
   width: 90%;
-  height: 100%;
   cursor: zoom-in;
   display: block;
   margin: auto;
@@ -110,10 +129,11 @@
 
 .image-gallery-main-box {
   display: flex;
-  background-color: lightgrey;
   width: 100%;
-  height: 100%;
   z-index: 1;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
 // Image Gallery Ends
@@ -122,9 +142,6 @@
 
 .overview-main-box {
   display: flex;
-  height: 660px;
-  margin-left: 10%;
-  margin-right: 10%;
 }
 
 // Overview Top Element Ends
@@ -132,7 +149,8 @@
 // Image Gallery Box Begins
 
 .overview-left-box {
-  width: 130%;
+
+  width: 55%;
   padding-right: 1%;
   z-index: 2;
 }
@@ -142,8 +160,8 @@
 // Product Info, Style Selector & Add to Cart Top Level Begins
 
 .overview-right-box {
-  // margin-left: 2%;
-  width: 80%;
+  margin-left: 1.5VW;
+  width: 45%;
   z-index: 1;
 }
 
@@ -151,57 +169,47 @@
 
 // Arrows Begins
 
-.right-arrow {
-  width: 20px;
-  height: 15px;
-  z-index: 1;
-  margin-left: -25%;
+.right-arrow,
+.left-arrow {
+  width: 1.5vw;
+  height: 1vw;
 }
 
 .right-arrow-box {
-  position: relative;
-  top: 45%;
-}
-
-.left-arrow {
-  width: 20px;
-  height: 15px;
-  position: relative;
-  top: 50%;
-  left: 66%;
+  margin-left: -1vw;
   z-index: 1;
 }
 
 .left-arrow-box {
-  position: inherit;
-  left: 3%;
+  margin-right: -1vw;
+  z-index: 1;
 }
 
 .image-gallery-expand {
-  position: relative;
-  top: 1%;
-  margin-left: -25%;
+  align-self: flex-start;
 }
 
 .expand-icon {
-  width: 20px;
+  width: 1.5vw;
+  height: 1.5vw;
 }
 
 // Product Begins
 
 .product-information-star-review-box {
   display: flex;
+  align-items: center;
 }
 
 .product-information-review {
   margin-left: 2%;
-  font: $MainFont;
+  font-family: $MainFont;
   font-size: $FontS;
   color: $ColorDarkGray;
 }
 
 .product-category {
-  font: $MainFont;
+  font-family: $MainFont;
   font-size: $FontM;
   color: $ColorDarkGray;
   margin-block-end: 0em;
@@ -216,40 +224,43 @@
 }
 
 .price {
-  font: $MainFont;
+  font-family: $MainFont;
   font-size: $FontM;
   font-weight: normal;
   color: $ColorExtraDarkGray;
 }
 
 .sale-price {
-  font: $MainFont;
+  font-family: $MainFont;
   font-weight: bold;
   font-size: $FontM;
   color: red;
 }
 
 .product-description {
-  font: $MainFont;
+  font-family: $MainFont;
   font-weight: normal;
   font-size: $FontS;
   color: $ColorExtraDarkGray;
-  height: 64px;
-  overflow: auto;
+  margin-bottom: 2vw;
 }
 
 // Product Ends
 
 //Add to cart Begins
 
+.add-cart-container {
+  margin-top: 1vw;
+}
+
 .size-selector {
   display: inline-block;
   border: 1px solid $ColorExtraDarkGray;
-  margin-right: 3%;
-  width: 260px;
-  height: 50px;
+  margin-right: 1vw;
+  width: 14vw;
+  height: 3vw;
   background-color: white;
-  font: $MainFont;
+  font-family: $MainFont;
   font-size: $FontS;
   font-weight: bold;
 }
@@ -257,10 +268,10 @@
 .quantity-selector {
   display: inline-block;
   border: 1px solid $ColorExtraDarkGray;
-  width: 130px;
-  height: 50px;
+  width: 8.5vw;
+  height: 3vw;
   background-color: white;
-  font: $MainFont;
+  font-family: $MainFont;
   font-size: $FontS;
   font-weight: bold;
 }
@@ -268,14 +279,14 @@
 .add-to-bag {
   display: inline-block;
   border: 1px solid $ColorExtraDarkGray;
-  margin-right: 3%;
-  width: 310px;
-  height: 50px;
+  width: 23.5vw;
+  height: 2.5vw;
   background-color: white;
-  font: $MainFont;
-  font-size: $FontS;
+  font-family: $MainFont;
+  font-size: $FontM;
   font-weight: bold;
-  text-align: left;
+  text-align: center;
+  margin-top: 1.5vw;
 }
 
 //Add to cart Ends
