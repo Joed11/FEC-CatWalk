@@ -135,21 +135,16 @@ const ImageGallery = (props) => {
           onClick={() => {
             if (!expanded) {
               $('.image-gallery-thumbnail-column').css('visibility', 'hidden');
-              $('.left-arrow-box').css({
-                position: 'relative',
-                left: '-8%',
-              });
               $('.image-gallery-main-image').css({
                 'object-fit': 'contain',
                 width: '90%',
-                height: '100%',
                 cursor: 'zoom-in',
                 display: 'block',
-                margin: '0%',
+                margin: 'auto',
               });
               $('.image-gallery-main-box').animate(
                 {
-                  width: '160%',
+                  width: '72vw',
                 },
                 1000
               );
@@ -168,7 +163,6 @@ const ImageGallery = (props) => {
                 transform: 'scale(1)',
                 'object-fit': 'contain',
                 width: '90%',
-                height: '100%',
                 cursor: 'zoom-in',
                 display: 'block',
                 margin: 'auto',
@@ -206,96 +200,83 @@ const ImageGallery = (props) => {
           alt="product image"
         />
       </div>
-      <div className="right-arrow-expand-box">
-        <div
-          className="image-gallery-expand"
-          onClick={() => {
-            if (!expanded) {
-              $('.image-gallery-thumbnail-column').css('visibility', 'hidden');
-              $('.left-arrow-box').css({
-                position: 'relative',
-                left: '-8%',
-              });
-              $('.image-gallery-main-image').css({
-                'object-fit': 'contain',
-                width: '90%',
-                height: '100%',
-                cursor: 'zoom-in',
-                display: 'block',
-                margin: '0%',
-              });
-              $('.image-gallery-main-box').animate(
-                {
-                  width: '160%',
-                },
-                1000
-              );
-              setExpand(true);
+      <div
+        className="right-arrow-box"
+        onClick={() => {
+          if (lastImg === false) {
+            var imageIdx = photos.findIndex(
+              (element) => element.url === mainImage
+            );
+            if (imageIdx + 2 === photos.length) {
+              setMainImage(photos[imageIdx + 1].url);
+              setLastImg(true);
             } else {
-              $('.image-gallery-thumbnail-column').css('visibility', 'visible');
-              $('.left-arrow-box').css({
-                position: 'inherit',
-                left: '3%',
-              });
-              $('.image-gallery-main-image').css({
-                'object-fit': 'contain',
-                width: '90%',
-                height: '100%',
-                cursor: 'zoom-in',
-                display: 'block',
-                margin: 'auto',
-              });
-              $('.image-gallery-main-box').animate(
-                {
-                  display: 'flex',
-                  'background-color': 'lightgrey',
-                  width: '100%',
-                  height: '100%',
-                  'z-index': '1',
-                },
-                1000
-              );
-              setExpand(false);
+              setMainImage(photos[imageIdx + 1].url);
+              setFirstImg(false);
             }
-          }}
-        >
-          <img
-            className="expand-icon"
-            src="./attributes/resize.png"
-            alt="resize"
-          />
-        </div>
-        <div
-          className="right-arrow-box"
-          onClick={() => {
-            if (lastImg === false) {
-              var imageIdx = photos.findIndex(
-                (element) => element.url === mainImage
-              );
-              if (imageIdx + 2 === photos.length) {
-                setMainImage(photos[imageIdx + 1].url);
-                setLastImg(true);
-              } else {
-                setMainImage(photos[imageIdx + 1].url);
-                setFirstImg(false);
-              }
-            }
-            if (Number(renderImages[5].key) === imageIdx) {
-              setMidPoint(midPoint + 1);
-            }
-          }}
-        >
-          <img
-            className="right-arrow"
-            src="./attributes/right-arrow.png"
-            style={
-              lastImg === true || zoomed
-                ? { visibility: 'hidden' }
-                : { visibility: 'visible' }
-            }
-            alt="right arrow"
-          />
-        </div>
+          }
+          if (Number(renderImages[5].key) === imageIdx) {
+            setMidPoint(midPoint + 1);
+          }
+        }}
+      >
+        <img
+          className="right-arrow"
+          src="./attributes/right-arrow.png"
+          style={
+            lastImg === true || zoomed
+              ? { visibility: 'hidden' }
+              : { visibility: 'visible' }
+          }
+          alt="right arrow"
+        />
+      </div>
+      <div
+        className="image-gallery-expand"
+        onClick={() => {
+          if (!expanded) {
+            $('.image-gallery-thumbnail-column').css('visibility', 'hidden');
+            $('.image-gallery-main-image').css({
+              'object-fit': 'contain',
+              width: '90%',
+              cursor: 'zoom-in',
+              display: 'block',
+              margin: 'auto',
+            });
+            $('.image-gallery-main-box').animate(
+              {
+                width: '72vw',
+              },
+              1000
+            );
+            setExpand(true);
+          } else {
+            $('.image-gallery-thumbnail-column').css('visibility', 'visible');
+            $('.image-gallery-main-image').css({
+              'object-fit': 'contain',
+              width: '90%',
+              cursor: 'zoom-in',
+              display: 'block',
+              margin: 'auto',
+            });
+            $('.image-gallery-main-box').animate(
+              {
+                display: 'flex',
+                'background-color': 'lightgrey',
+                width: '100%',
+                'z-index': '1',
+              },
+              1000
+            );
+            setExpand(false);
+          }
+        }}
+      >
+        <img
+          className="expand-icon"
+          src="./attributes/resize.png"
+          alt="resize"
+        />
       </div>
     </div>
   );
