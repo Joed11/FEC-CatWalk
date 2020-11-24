@@ -16,18 +16,18 @@
 
 .style-grid {
   display: grid;
-  grid-template-rows: 7vw 7vw;
-  grid-template-columns: 7vw 7vw 7vw 7vw;
-  row-gap: .2vw;
-  column-gap: .2vw;
+  grid-template-rows: 6vw 6vw;
+  grid-template-columns: 6vw 6vw 6vw 6vw;
+  row-gap: .15vw;
+  column-gap: .15vw;
 }
 
 .style-grid-image {
   position: relative;
   border-radius: 50%;
   object-fit: cover;
-  width: 5.5vw;
-  height: 5.5vw;
+  width: 5vw;
+  height: 5vw;
   border: 1px solid $ColorMediumGray;
 }
 
@@ -35,7 +35,7 @@
   display: block;
   position: absolute;
   z-index: 1;
-  width: 2vw;
+  width: 1.75vw;
   transform: translateX(210%) translateY(-30%)
 }
 
@@ -45,12 +45,28 @@
   font-size: $FontM;
   margin-block-start: 0em;
   margin-block-end: 0em;
+  margin-bottom: 1vw;
 }
 
 .style-name {
   font-family: $MainFont;
   font-weight: normal;
   font-size: $FontM;
+}
+
+.style-grid-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+}
+
+.style-grid-arrow-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1vw;
 }
 
 // Style Selector Ends
@@ -232,12 +248,16 @@ div.image-gallery-scroll-down img {
 
 //Add to cart Begins
 
+.add-cart-container {
+  margin-top: 1vw;
+}
+
 .size-selector {
   display: inline-block;
   border: 1px solid $ColorExtraDarkGray;
-  margin-right: 3%;
-  width: 260px;
-  height: 50px;
+  margin-right: 1vw;
+  width: 14vw;
+  height: 3vw;
   background-color: white;
   font-family: $MainFont;
   font-size: $FontS;
@@ -247,8 +267,8 @@ div.image-gallery-scroll-down img {
 .quantity-selector {
   display: inline-block;
   border: 1px solid $ColorExtraDarkGray;
-  width: 130px;
-  height: 50px;
+  width: 8.5vw;
+  height: 3vw;
   background-color: white;
   font-family: $MainFont;
   font-size: $FontS;
@@ -258,14 +278,14 @@ div.image-gallery-scroll-down img {
 .add-to-bag {
   display: inline-block;
   border: 1px solid $ColorExtraDarkGray;
-  margin-right: 3%;
-  width: 310px;
-  height: 50px;
+  width: 23.5vw;
+  height: 2.5vw;
   background-color: white;
   font-family: $MainFont;
-  font-size: $FontS;
+  font-size: $FontM;
   font-weight: bold;
-  text-align: left;
+  text-align: center;
+  margin-top: 1.5vw;
 }
 
 //Add to cart Ends

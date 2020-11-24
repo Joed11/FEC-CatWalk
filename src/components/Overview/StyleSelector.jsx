@@ -23,40 +23,44 @@ const StyleSelector = (props) => {
 
   return (
     <div>
-      <p className="style">
+      <div className="style">
         STYLE > <span className="style-name">{props.currentStyle.name}</span>
-      </p>
-      <img
-        className="style-arow-up"
-        src={'./attributes/keyboard-up-arrow.png'}
-        onClick={() => {
-          if (group > 0) {
-            setGroup(group - 1);
-          }
-        }}
-        style={
-          group > 0
-            ? { visibility: 'visible', transform: 'translateX(515%)' }
-            : { visibility: 'hidden', transform: 'translateX(515%)' }
-        }
-        alt="up arrow"
-      />
-      <div className="style-grid">{displayStyles}</div>
-      <img
-        className="style-arow-down"
-        src={'./attributes/keyboard-down-arrow.png'}
-        onClick={() => {
-          if (group * 4 + 8 < styles.length) {
-            setGroup(group + 1);
-          }
-        }}
-        style={
-          group * 4 + 8 < styles.length
-            ? { visibility: 'visible', transform: 'translateX(515%)' }
-            : { visibility: 'hidden', transform: 'translateX(515%)' }
-        }
-        alt="down arrow"
-      />
+      </div>
+      <div className="style-grid-container">
+        <div className="style-grid">{displayStyles}</div>
+        <div className="style-grid-arrow-container">
+          <img
+            className="style-arow-up"
+            src={'./attributes/keyboard-up-arrow.png'}
+            onClick={() => {
+              if (group > 0) {
+                setGroup(group - 1);
+              }
+            }}
+            style={
+              group > 0
+                ? { visibility: 'visible'}
+                : { visibility: 'hidden'}
+            }
+            alt="up arrow"
+          />
+          <img
+            className="style-arow-down"
+            src={'./attributes/keyboard-down-arrow.png'}
+            onClick={() => {
+              if (group * 4 + 8 < styles.length) {
+                setGroup(group + 1);
+              }
+            }}
+            style={
+              group * 4 + 8 < styles.length
+                ? { visibility: 'visible'}
+                : { visibility: 'hidden'}
+            }
+            alt="down arrow"
+          />
+        </div>
+      </div>
     </div>
   );
 };

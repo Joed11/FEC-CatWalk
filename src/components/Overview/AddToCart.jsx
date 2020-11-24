@@ -30,7 +30,7 @@ const AddToCart = (props) => {
   );
 
   const [quantity, setQuantity] = useState('');
-  const [size, setSize] = useState('');  
+  const [size, setSize] = useState('');
 
   var renderQuantity = [];
   var maxQuantity = quantity > 15 ? 15 : quantity;
@@ -43,9 +43,9 @@ const AddToCart = (props) => {
     setQuantity('');
     setSize('');
   }, [props.currentStyle.style_id]);
-  
+
   return (
-    <div>
+    <div className="add-cart-container">
       <select
         defaultValue=''
         className="size-selector"
@@ -66,7 +66,6 @@ const AddToCart = (props) => {
       >
         {quantity === '' ? <option key={'none'}>-</option> : renderQuantity}
       </select>
-      <p></p>
       <button className="add-to-bag">ADD TO BAG</button>
     </div>
   );
