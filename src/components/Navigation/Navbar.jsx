@@ -20,27 +20,26 @@ export default Navbar;
 var changeProduct = (e, props) => {
   if (e.key === 'Enter') {
     var id = parseInt(e.target.value)
-    if (id !== NaN) {
+    if (!isNaN(id)) {
       return axios
         .get(`/catwalk/${id}`)
         .then((response) => {
-          console.log(response)
           const newData = response.data;
           const styleData = newData.primaryProductStyles.results
           styleData.forEach((style) => {
             style.photos.forEach((photo) => {
               if (photo.thumbnail_url === null) {
-                photo.thumbnail_url = '../../dist/attributes/no_img.jpg';
+                photo.thumbnail_url = './attributes/no-img.png';
               }
               if (photo.url === null) {
-                photo.url = '../../dist/attributes/no_img.jpg';
+                photo.url = './attributes/no-img.png';
               }
             })
           })
           props.updatePrimaryProduct(newData.primaryProduct);
           props.updateQuestions(newData.primaryProductQuestions.results);
-          props.updateStyles(newData.primaryProductStyles.results);
-          props.updateCurrentStyle(newData.primaryProductStyles.results[0]);
+          props.updateStyles(styleData);
+          props.updateCurrentStyle(styleData[0]);
           props.updateReviewsList(newData.primaryProductReviews.results);
           props.updateReviewsData(newData.primaryProductReviewsNumbers);
         })

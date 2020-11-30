@@ -12,19 +12,15 @@ function initializeStore(id, callback) {
       const data = response.data;
       const styleData = data.primaryProductStyles.results
       styleData.forEach((style) => {
-        console.log('style in for each', style);
         style.photos.forEach((photo) => {
-          console.log('photo in for each', photo);
           if (photo.thumbnail_url === null) {
-            photo.thumbnail_url = '../../dist/attributes/no_img';
+            photo.thumbnail_url = './attributes/no-img.png';
           }
           if (photo.url === null) {
-            photo.url = '../../dist/attributes/no_img';
+            photo.url = './attributes/no-img.png';
           }
         })
       })
-      console.log('****data', data);
-      console.log('***styledata', styleData);
       var defaultState = {
         primaryProduct: data.primaryProduct,
         currentStyles: styleData,
