@@ -25,7 +25,18 @@ var changeProduct = (e, props) => {
         .get(`/catwalk/${id}`)
         .then((response) => {
           console.log(response)
-          var newData = response.data;
+          const newData = response.data;
+          const styleData = newData.primaryProductStyles.results
+          styleData.forEach((style) => {
+            style.photos.forEach((photo) => {
+              if (photo.thumbnail_url === null) {
+                photo.thumbnail_url = '../../dist/attributes/no_img.jpg';
+              }
+              if (photo.url === null) {
+                photo.url = '../../dist/attributes/no_img.jpg';
+              }
+            })
+          })
           props.updatePrimaryProduct(newData.primaryProduct);
           props.updateQuestions(newData.primaryProductQuestions.results);
           props.updateStyles(newData.primaryProductStyles.results);

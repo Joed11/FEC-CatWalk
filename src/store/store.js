@@ -9,13 +9,28 @@ function initializeStore(id, callback) {
   return axios
     .get(`/catwalk/${id}`)
     .then((response) => {
-      var data = response.data;
+      const data = response.data;
+      const styleData = data.primaryProductStyles.results
+      styleData.forEach((style) => {
+        console.log('style in for each', style);
+        style.photos.forEach((photo) => {
+          console.log('photo in for each', photo);
+          if (photo.thumbnail_url === null) {
+            photo.thumbnail_url = '../../dist/attributes/no_img';
+          }
+          if (photo.url === null) {
+            photo.url = '../../dist/attributes/no_img';
+          }
+        })
+      })
+      console.log('****data', data);
+      console.log('***styledata', styleData);
       var defaultState = {
         primaryProduct: data.primaryProduct,
-        currentStyles: data.primaryProductStyles.results,
-        currentStyle: data.primaryProductStyles.results[0],
-        currentImages: data.primaryProductStyles.results[0].photos,
-        currentImage: data.primaryProductStyles.results[0].photos[0],
+        currentStyles: styleData,
+        currentStyle: styleData[0],
+        currentImages: styleData[0].photos,
+        currentImage: styleData[0].photos[0],
         productQuestions: data.primaryProductQuestions.results,
         sortingMethod: 'relevance',
         reviews: data.primaryProductReviews.results,
