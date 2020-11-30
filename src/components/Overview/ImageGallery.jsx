@@ -3,8 +3,6 @@ import $ from 'jquery';
 import '../../../dist/stylesheets/OverviewStyles.css';
 
 const ImageGallery = (props) => {
-  console.log('ImageGallery', props);
-
   var photos = props.currentStyle.photos;
 
   const [mainImage, setMainImage] = useState(photos[0].url);
@@ -18,7 +16,11 @@ const ImageGallery = (props) => {
   useEffect(() => {
     setMainImage(photos[0].url);
     setFirstImg(true);
-    setLastImg(false);
+    if (photos.length > 1) {
+      setLastImg(false);
+    } else {
+      setLastImg(true);
+    }
     setMidPoint(3);
   }, [props.currentStyle.style_id]);
 
