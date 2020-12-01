@@ -8,10 +8,13 @@ const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const config = {
-  entry: './src/index.js',
+  entry: {
+    app: './src/index.js',
+  },
   output: {
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    publicPath: '/',
   },
   optimization: {
     minimize: true,
@@ -52,7 +55,7 @@ const config = {
     ]
   },
   plugins: [
-    new LodashModuleReplacementPlugin,
+    // new LodashModuleReplacementPlugin,
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/),
     new CompressionPlugin(),
     new HtmlWebpackPlugin({
