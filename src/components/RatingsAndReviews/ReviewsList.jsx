@@ -47,7 +47,7 @@ class ReviewsList extends React.Component {
         `http://18.224.37.110/reviews?product_id=${this.props.primaryProduct.id}&sort=${newValue}`
       )
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         this.props.updateReviewsList(res.data.results);
       })
       .catch((err) => {

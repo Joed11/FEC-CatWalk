@@ -11,7 +11,6 @@ var AddReviewsModal = (props) => {
   for (let key in props.primaryProductMetadata.characteristics) {
     characteristics.push(key);
   }
-  console.log(characteristics);
   let characteristicsRadio = characteristics.map((value) => {
     return (
       <div>
