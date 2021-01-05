@@ -14,7 +14,10 @@ function AppRouter(props) {
             <Route exact path="/">
               <MainApp/>
             </Route>
-            <Route path="/products/:id">
+            <Route path="/:page/:id">
+              <MainApp/>
+            </Route>
+            <Route path="/:page">
               <MainApp/>
             </Route>
           </Switch>
@@ -25,7 +28,7 @@ function AppRouter(props) {
 export default AppRouter;
 
 function MainApp() {
-  var {id} = useParams();
+  var {id, page} = useParams();
 
   console.log('useParams function result', useParams())
 
@@ -33,6 +36,14 @@ function MainApp() {
 
   if (!id) {
     id = 1;
+  }
+
+  if (page !== 'products' && page) {
+    return <div>The page "{page}" does not exist</div>
+  }
+
+  if (id < 1 || id > 10011) {
+    return <div>The product number "{id}" does not exist</div>
   }
 
   console.log('MainApp id', id);
