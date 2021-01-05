@@ -70,15 +70,15 @@ const ImageGallery = (props) => {
             }
           }}
         >
-          <img
-            src="./attributes/keyboard-up-arrow.png"
-            alt="up arrow"
-            style={
-              renderImages[0].key === imageCollection[0].key || expanded
-                ? { visibility: 'hidden' }
-                : { visibility: 'visible' }
-            }
-          />
+          <span
+          className="material-icons"
+          style={
+            renderImages[0].key === imageCollection[0].key || expanded
+              ? { visibility: 'hidden' }
+              : { visibility: 'visible' }
+          }>
+            keyboard_arrow_up
+          </span>
         </div>
         <div className="image-gallery-grid">{renderImages}</div>
         <div
@@ -89,16 +89,16 @@ const ImageGallery = (props) => {
             }
           }}
         >
-          <img
-            src="./attributes/keyboard-down-arrow.png"
-            alt="down arrow"
+          <span
+            className="material-icons"
             style={
               renderImages[renderImages.length - 1].key ===
               imageCollection[imageCollection.length - 1].key || expanded
                 ? { visibility: 'hidden' }
                 : { visibility: 'visible' }
-            }
-          />
+            }>
+            keyboard_arrow_down
+          </span>
         </div>
       </div>
       <div
@@ -120,16 +120,16 @@ const ImageGallery = (props) => {
           }
         }}
       >
-        <img
-          className="left-arrow"
-          src="./attributes/left-arrow.png"
-          style={
-            firstImg === true || zoomed
-              ? { visibility: 'hidden' }
-              : { visibility: 'visible' }
-          }
-          alt="left arrow"
-        />
+        <span
+        className="material-icons"
+        style={
+          firstImg === true || zoomed
+            ? { visibility: 'hidden' }
+            : { visibility: 'visible' }
+        }
+        >
+          arrow_back
+        </span>
       </div>
       <div className="image-gallery-main-image-box">
         <img
@@ -222,16 +222,16 @@ const ImageGallery = (props) => {
           }
         }}
       >
-        <img
-          className="right-arrow"
-          src="./attributes/right-arrow.png"
-          style={
-            lastImg === true || zoomed
-              ? { visibility: 'hidden' }
-              : { visibility: 'visible' }
-          }
-          alt="right arrow"
-        />
+        <span
+        className="material-icons"
+        style={
+          lastImg === true || zoomed
+            ? { visibility: 'hidden' }
+            : { visibility: 'visible' }
+        }
+        >
+          arrow_forward
+        </span>
       </div>
       <div
         className="image-gallery-expand"
@@ -273,11 +273,7 @@ const ImageGallery = (props) => {
           }
         }}
       >
-        <img
-          className="expand-icon"
-          src="./attributes/resize.png"
-          alt="resize"
-        />
+        <span className="material-icons">open_in_full</span>
       </div>
     </div>
   );
