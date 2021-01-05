@@ -14,7 +14,7 @@
     }
   },
   "scripts": {
-    "build": "node-sass ./stylesheets -o ./dist/stylesheets --output-style compressed && webpack --config webpack.config.js",
+    "build": "node-sass ./stylesheets -o ./dist/stylesheets --output-style compressed && webpack -p --mode production",
     "build-dev": "webpack -d --mode development -w",
     "build-prod": "webpack -p --mode production -w",
     "test": "jest",
