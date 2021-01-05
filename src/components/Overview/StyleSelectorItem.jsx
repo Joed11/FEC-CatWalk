@@ -10,16 +10,16 @@ const StyleSelectorItem = ({ style, handleStyleChange, currentStyleID }) => {
         handleStyleChange(styleObj);
       }}
     >
-      <img
-        className="style-grid-item-checkmark"
-        src={'./attributes/checkmark.png'}
+      <span
+        className="style-grid-item-checkmark material-icons"
         style={
           style.style_id === currentStyleID
             ? { visibility: 'visible' }
             : { visibility: 'hidden' }
         }
-        alt='style checkmark'
-      />
+      >
+        check_circle
+      </span>
       <img className="style-grid-image" src={style.photos[0].thumbnail_url} alt='style image'/>
     </div>
   );

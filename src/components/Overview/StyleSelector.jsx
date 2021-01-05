@@ -29,9 +29,8 @@ const StyleSelector = (props) => {
       <div className="style-grid-container">
         <div className="style-grid">{displayStyles}</div>
         <div className="style-grid-arrow-container">
-          <img
-            className="style-arow-up"
-            src={'./attributes/keyboard-up-arrow.png'}
+          <span
+            className="material-icons"
             onClick={() => {
               if (group > 0) {
                 setGroup(group - 1);
@@ -42,11 +41,11 @@ const StyleSelector = (props) => {
                 ? { visibility: 'visible'}
                 : { visibility: 'hidden'}
             }
-            alt="up arrow"
-          />
-          <img
-            className="style-arow-down"
-            src={'./attributes/keyboard-down-arrow.png'}
+          >
+            keyboard_arrow_up
+          </span>
+          <span
+            className="material-icons"
             onClick={() => {
               if (group * 4 + 8 < styles.length) {
                 setGroup(group + 1);
@@ -57,8 +56,9 @@ const StyleSelector = (props) => {
                 ? { visibility: 'visible'}
                 : { visibility: 'hidden'}
             }
-            alt="down arrow"
-          />
+          >
+            keyboard_arrow_down
+          </span>
         </div>
       </div>
     </div>
