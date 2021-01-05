@@ -5,7 +5,6 @@ const path = require('path');
 const APIURL = process.env.API_URL;
 
 ROUTER.get('/:id', (req, res) => {
-  console.log('hit catwalk id')
   var id = req.params.id
   const params = [
     axios.get(`${APIURL}/products/${id}`),
