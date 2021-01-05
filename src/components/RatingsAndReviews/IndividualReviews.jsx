@@ -108,7 +108,7 @@ const handleReviewHelpful = (reviewID, trueOrFalse) => {
     axios
       .put(`http://18.224.37.110/reviews/${reviewID}/helpful`)
       .then((response) => {
-        console.log('success', response);
+        // console.log('success', response);
       })
       .catch((err) => {
         console.log('error marking answer helpful', err);
@@ -118,7 +118,7 @@ const handleReviewHelpful = (reviewID, trueOrFalse) => {
     axios
       .put(`http://18.224.37.110/reviews/${reviewID}/report/`)
       .then((response) => {
-        console.log('success', response);
+        // console.log('success', response);
       })
       .catch((err) => {
         console.log('error marking answer helpful', err);

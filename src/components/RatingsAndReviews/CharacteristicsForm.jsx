@@ -1,7 +1,6 @@
 import React from 'react';
 
 let CharacteristicsForm = (props) => {
-  console.log(props);
   let option1, option2, option3, option4, option5;
 
   if (props.characteristics === 'Size') {

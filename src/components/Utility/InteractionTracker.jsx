@@ -15,7 +15,7 @@ class InteractionTracker extends React.Component {
       time: new Date()
     })
     .then((response) => {
-      console.log('success posting interaction', response);
+
     })
     .catch((error) => {
       console.log('error posting interaction', error);
