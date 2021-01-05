@@ -1,17 +1,18 @@
+import axios from 'axios';
 import { createStore } from 'redux';
 import rootReducer from './../reducers/main.js';
 
-var defaultState = {
+const defaultState = {
   primaryProduct: null,
   currentStyles: null,
-  currentStyle: null,
+  currentStyle:  null,
   currentImages: null,
   currentImage: null,
+  relatedProducts: null,
   productQuestions: null,
-  sortingMethod: null,
   reviews: null,
-  primaryProductMetadata: null,
-};
+  primaryProductMetadata: null
+}
 
 const store = createStore(rootReducer, defaultState);
 
