@@ -18,10 +18,10 @@ function App(props) {
         styleData.forEach((style) => {
           style.photos.forEach((photo) => {
             if (photo.thumbnail_url === null) {
-              photo.thumbnail_url = './attributes/no-img.png';
+              photo.thumbnail_url = 'https://www.iphonetechnicians.com/wp-content/uploads/2020/10/image-coming-soon-placeholder.png';
             }
             if (photo.url === null) {
-              photo.url = './attributes/no-img.png';
+              photo.url = 'https://www.iphonetechnicians.com/wp-content/uploads/2020/10/image-coming-soon-placeholder.png';
             }
           })
         })
