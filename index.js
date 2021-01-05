@@ -10,11 +10,16 @@ const PORT = process.env.PORT || 3005;
 APP.use(compression());
 APP.use(bodyParser.json());
 APP.use(bodyParser.urlencoded({ extended: true }));
-APP.use(express.static(path.join(__dirname, 'dist')));
 
 APP.use('/catwalk', apiRouter);
 
-APP.use((req,res)=>{res.sendFile(`${__dirname}/dist/index.html`)});
+APP.use(express.static(path.join(__dirname, 'dist/')))
+
+APP.use((req,res) => {
+  console.log(path.join(__dirname, 'dist/'))
+  console.log(res);
+  res.sendFile(path.join(__dirname, 'dist/'))
+});
 
 APP.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
