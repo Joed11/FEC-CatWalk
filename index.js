@@ -16,8 +16,6 @@ APP.use('/catwalk', apiRouter);
 APP.use(express.static(path.join(__dirname, 'dist/')))
 
 APP.use((req,res) => {
-  console.log(path.join(__dirname, 'dist/'))
-  console.log(res);
   res.sendFile(path.join(__dirname, 'dist/'))
 });
 
