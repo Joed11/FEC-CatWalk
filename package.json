@@ -14,9 +14,7 @@
     }
   },
   "scripts": {
-    "build": "node-sass ./stylesheets -o ./dist/stylesheets --output-style compressed && webpack --config webpack.config.js",
-    "build-dev": "webpack -d --mode development -w",
-    "build-prod": "webpack -p --mode production -w",
+    "build": "node-sass ./stylesheets -o ./dist/stylesheets --output-style compressed && webpack",
     "test": "jest",
     "test-cov": "jest --collect-coverage",
     "start": "node ./index.js",
@@ -65,8 +63,8 @@
     "sass-loader": "^10.1.0",
     "style-loader": "^2.0.0",
     "terser-webpack-plugin": "^5.0.3",
-    "webpack": "^5.9.0",
-    "webpack-cli": "^4.2.0"
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.1"
   },
   "engines": {
     "node": "12.18.3"

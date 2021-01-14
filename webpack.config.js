@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const config = {
+module.exports = {
   entry: {
     app: './src/index.js',
   },
@@ -16,6 +16,7 @@ const config = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
   },
+  mode: 'production',
   optimization: {
     minimize: true,
     minimizer: [new TerserPlugin({
@@ -78,5 +79,3 @@ const config = {
     })
   ]
 };
-
-module.exports = config;
