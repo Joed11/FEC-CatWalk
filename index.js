@@ -1,4 +1,4 @@
-// require('dotenv').config();
+require('dotenv').config();
 const express = require('express');
 const APP = express();
 const apiRouter = require('./server/apiRouter');
