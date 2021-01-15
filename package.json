@@ -15,7 +15,6 @@
   },
   "scripts": {
     "build-bundle": "node-sass ./stylesheets -o ./dist/stylesheets --output-style compressed && webpack",
-    "heroku-postbuild": "npm run build-bundle",
     "test": "jest",
     "test-cov": "jest --collect-coverage",
     "start": "node ./index.js",
