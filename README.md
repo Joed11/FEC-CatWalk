@@ -70,7 +70,7 @@ npm run start-dev
 ### Quesitons & Answers Widget
 >  The Questions and Answers widget allows users to browse questions about the current product posed by other users along with any answers that have been provided for that quesiton.  Questions and answers can be marked helpful which will affect the order in whcih they appear.  They can also be reported which will remove them from results and flag them for review on the back-end.  Users can submit their own quesitons and answers via modal pop ups.  Quesitons can also be filtered via the searchbar at the top of the Quesitons and Answer widget.
 
-![](Readme-assets/QandA_Widget.gif) | ![](Readme-assets/QandA_form_validation.gif)
+![](Readme-assets/QandA_Widget.gif)  ![](Readme-assets/QandA_form_validation.gif)
 
 ### Ratings & Reviews Widget
 > The Ratings and Reviews widget allows users to browse reviews for the current product which have been submitted by other users.  Reviews can be sorted by multiple criteria and an average rating is provided based on all reviews associated with the product.  Users can mark a review as helpful or report a review if necessary.  Finally, Users can submit their own review of the product via a modal.
