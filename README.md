@@ -9,15 +9,15 @@ This app is a front-end web applicaiton.
 ---
 
 ## Table of Contents
-1. [Getting Started](#Installing-Dependencies)
+1. [Getting Started](#Getting-Started)
 2. [Tech Stack](#Tech-Stack)
 3. [Widgets](#Widgets)
-4. [Web Performance](#Optimization)
+4. [Web Performance](#Web-Performance)
 5. [Contributors](#Contributors)
 
 ---
 
-## Installing-Dependencies
+## Getting-Started
 
 ### Navigate to the root directory and run the following in your terminal:
 
@@ -80,7 +80,7 @@ npm run start-dev
 
 ---
 
-## Web Performance
+## Web-Performance
 
 > Several Optimization techniques were utilized to increase site performance including:
 
