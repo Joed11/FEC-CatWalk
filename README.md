@@ -4,7 +4,7 @@
 
 This app is a front-end web applicaiton.
 
-![](readme-assets/Product_Overview.gif)
+![](Readme-assets/Product_Overview.gif)
 
 ---
 
@@ -65,19 +65,17 @@ npm run start-dev
 ### Product Overview Widget
 >  The Product Overview widget is the main area for users to view details about the current product (such as price, description, etc...).  Users can select a product style and view photos of that product style via a photo carousel.  Photos can be enlarged and zoomed in on for finer detail.  In the "Add to Bag" area, drop down menus will be auto-populated with the sizes and quantities available for that specific product style.
 
-![](readme-assets/Product_Overview.gif)
+![](Readme-assets/Product_Overview.gif)
 
 ### Quesitons & Answers Widget
 >  The Questions and Answers widget allows users to browse questions about the current product posed by other users along with any answers that have been provided for that quesiton.  Questions and answers can be marked helpful which will affect the order in whcih they appear.  They can also be reported which will remove them from results and flag them for review on the back-end.  Users can submit their own quesitons and answers via modal pop ups.  Quesitons can also be filtered via the searchbar at the top of the Quesitons and Answer widget.
 
-![](readme-assets/QandA_Widget.gif)
-
-![](readme-assets/QandA_form_validation.gif)
+![](Readme-assets/QandA_Widget.gif) | ![](Readme-assets/QandA_form_validation.gif)
 
 ### Ratings & Reviews Widget
 > The Ratings and Reviews widget allows users to browse reviews for the current product which have been submitted by other users.  Reviews can be sorted by multiple criteria and an average rating is provided based on all reviews associated with the product.  Users can mark a review as helpful or report a review if necessary.  Finally, Users can submit their own review of the product via a modal.
 
-![](readme-assets/Reviews_widget.gif)
+![](Readme-assets/Reviews_widget.gif)
 
 
 ---
@@ -91,7 +89,7 @@ npm run start-dev
 * Minification
 * Gzip compression
 
-![](readme-assets/FEC_Lighthouse_Audit.pdf)
+![](Readme-assets/FEC_Lighthouse_Audit.png)
 
 ---
 
