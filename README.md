@@ -75,7 +75,7 @@ npm run start-dev
 ### Ratings & Reviews Widget
 > The Ratings and Reviews widget allows users to browse reviews for the current product which have been submitted by other users.  Reviews can be sorted by multiple criteria and an average rating is provided based on all reviews associated with the product.  Users can mark a review as helpful or report a review if necessary.  Finally, Users can submit their own review of the product via a modal.
 
-![](Readme-assets/Reviews_widget.gif)
+![](Readme-assets/Reviews_Widget.gif)
 
 
 ---
