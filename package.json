@@ -14,7 +14,7 @@
     }
   },
   "scripts": {
-    "build": "node-sass ./stylesheets -o ./dist/stylesheets --output-style compressed && webpack",
+    "build-bundle": "node-sass ./stylesheets -o ./dist/stylesheets --output-style compressed && webpack",
     "test": "jest",
     "test-cov": "jest --collect-coverage",
     "start": "node ./index.js",
