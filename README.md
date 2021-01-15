@@ -75,8 +75,8 @@ npm run start-dev
 ### Quesitons & Answers Widget
 >  The Questions and Answers widget allows users to browse questions about the current product posed by other users along with any answers that have been provided for that quesiton.  Questions and answers can be marked helpful which will affect the order in whcih they appear.  They can also be reported which will remove them from results and flag them for review on the back-end.  Users can submit their own quesitons and answers via modal pop ups.  Quesitons can also be filtered via the searchbar at the top of the Quesitons and Answer widget.
 
-<kbd>
-<img src="Readme-assets/QandA_Widget.gif" width="425"/> <img src="Readme-assets/QandA_form_validation.gif" width="425"/> 
+
+<kbd><img src="Readme-assets/QandA_Widget.gif" width="425"/></kbd> <kbd><img src="Readme-assets/QandA_form_validation.gif" width="425"/></kbd>
 </kbd>
 <br></br>
 
