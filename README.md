@@ -53,7 +53,7 @@ npm run start-dev
 
 ## Tech-Stack
 
--  [Node.js - v12](nodejs.org)
+-  [Node.js - v12](https://nodejs.org/)
 -  [React - v17](https://reactjs.org/)
 -  [Redux - v4](https://redux.js.org/)
 -  [React-Router - v5](https://reactrouter.com)
@@ -108,9 +108,9 @@ npm run start-dev
 
 ## Contributors
 
-- [Denis Sanches](https://github.com/shelleychenn)
-- [David Lai](https://github.com/Eweiner11)
-- [Joe DiMartino](https://github.com/mdoudy90)
+- [Denis Sanches](https://github.com/efir-tractatus)
+- [David Lai](https://github.com/punkvidi)
+- [Joe DiMartino](https://github.com/joed11)
 
 ## Credits
 
