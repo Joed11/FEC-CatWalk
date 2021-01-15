@@ -42,7 +42,6 @@ function MainApp() {
     return <div>The product number "{id}" does not exist</div>
   }
 
-  console.log('MainApp id', id);
   return (
     <AppContainer productID={id}/>
   );
