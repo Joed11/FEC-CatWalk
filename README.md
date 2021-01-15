@@ -2,9 +2,11 @@
 
 [Live App](https://fec-catwalk-app.herokuapp.com/)
 
-This app is a front-end web applicaiton.
+Project Catwalk is a front-end web app built by a team of 3 developers working remotely.  The styling and funcitonality was implemented according to guidlines set in a business requirement document.  The primary architecture is React for rendering of dom elements and interactivity with redux for state management.  The app is served via a simple express server and utilizes an existing back-end API to draw data/content from. The app has access to over 10000 unique products that can be loaded by typing a number (1-10000) in the search bar at the top right of the page and hitting the "enter/return" key.  React-router was also implemented to allow for dynamic url routing based on the current product.  (ex. requesting endpoint "/products/999" will load product number 999).
 
-![](Readme-assets/Product_Overview.gif)
+<kbd>
+<img src="Readme-assets/Product_Overview.gif" width="425"/>
+</kbd>
 
 ---
 
@@ -31,7 +33,7 @@ npm install
 *  **PORT** = The port the server will listen on *(if this variable is not provided server will default to 3005)*
 *  **API_URL** = URL of the API that will provide data to the frontend app
 
->*Build client side bundle (compile SASS to CSS and build webpack bundle):*
+>*Build client side bundle (compiles SASS to CSS and build webpack bundle):*
 ```
 npm run build
 ```
@@ -65,18 +67,26 @@ npm run start-dev
 ### Product Overview Widget
 >  The Product Overview widget is the main area for users to view details about the current product (such as price, description, etc...).  Users can select a product style and view photos of that product style via a photo carousel.  Photos can be enlarged and zoomed in on for finer detail.  In the "Add to Bag" area, drop down menus will be auto-populated with the sizes and quantities available for that specific product style.
 
-![](Readme-assets/Product_Overview.gif)
+<kbd>
+  <img src="Readme-assets/Product_Overview.gif" width="425"/>
+</kbd>
+<br></br>
 
 ### Quesitons & Answers Widget
 >  The Questions and Answers widget allows users to browse questions about the current product posed by other users along with any answers that have been provided for that quesiton.  Questions and answers can be marked helpful which will affect the order in whcih they appear.  They can also be reported which will remove them from results and flag them for review on the back-end.  Users can submit their own quesitons and answers via modal pop ups.  Quesitons can also be filtered via the searchbar at the top of the Quesitons and Answer widget.
 
-![](Readme-assets/QandA_Widget.gif)  ![](Readme-assets/QandA_form_validation.gif)
+<kbd>
+<img src="Readme-assets/QandA_Widget.gif" width="425"/> <img src="Readme-assets/QandA_form_validation.gif" width="425"/> 
+</kbd>
+<br></br>
 
 ### Ratings & Reviews Widget
 > The Ratings and Reviews widget allows users to browse reviews for the current product which have been submitted by other users.  Reviews can be sorted by multiple criteria and an average rating is provided based on all reviews associated with the product.  Users can mark a review as helpful or report a review if necessary.  Finally, Users can submit their own review of the product via a modal.
 
-![](Readme-assets/Reviews_Widget.gif)
-
+<kbd>
+<img src="Readme-assets/Reviews_Widget.gif" width="425"/>
+</kbd>
+<br></br>
 
 ---
 
@@ -84,12 +94,14 @@ npm run start-dev
 
 > Several Optimization techniques were utilized to increase site performance including:
 
-* Critical HTML Loading
-* Above the fold CSS style loading
+* Critical HTML & Style Loading
 * Minification
 * Gzip compression
 
-![](Readme-assets/FEC_Lighthouse_Report.png)
+<kbd>
+<img src="Readme-assets/FEC_Lighthouse_Report.png" width="425"/>
+</kbd>
+<br></br>
 
 ---
 
