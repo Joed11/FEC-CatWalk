@@ -89,7 +89,7 @@ npm run start-dev
 * Minification
 * Gzip compression
 
-![](Readme-assets/FEC_Lighthouse_Audit.png)
+![](Readme-assets/FEC_Lighthouse_Report.png)
 
 ---
 
