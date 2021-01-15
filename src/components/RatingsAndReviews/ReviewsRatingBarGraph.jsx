@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import '../../../dist/stylesheets/RatingsAndReviews.css';
 
 const ReviewsRatingBarGraph = (props) => {
-  console.log(props)
   const data = props.ratings
   const barHeight = props.modeRatings ;
 
@@ -17,7 +16,6 @@ const ReviewsRatingBarGraph = (props) => {
     else {
       variable = data[i]
     }
-    console.log(variable)
     returner.push(
       <div>
         <BarGraphComponents

@@ -30,10 +30,6 @@ export default AppRouter;
 function MainApp() {
   var {id, page} = useParams();
 
-  console.log('useParams function result', useParams())
-
-  console.log('useparams id', id);
-
   if (!id) {
     id = 1;
   }

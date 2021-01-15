@@ -6,7 +6,6 @@ import RatingsAndReviews from './components/RatingsAndReviews/RatingsAndReviews.
 import QuestionsAndAnswersWidgetContainer from './containers/QandA/QuestionsAndAnswersWidgetContainer.js';
 
 function App(props) {
-  console.log('productID', props.productID)
   const { productID } = props;
   const [isLoading, setIsLoading] = useState(true);
 

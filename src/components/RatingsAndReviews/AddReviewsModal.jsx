@@ -108,7 +108,6 @@ var AddReviewsModal = (props) => {
           onClick={() => {
             let url = document.getElementById('photo-upload').value;
             imagesArr.push(url);
-            console.log(imagesArr);
           }}
         >
           Submit Photo
