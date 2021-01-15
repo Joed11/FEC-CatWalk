@@ -33,7 +33,7 @@ npm install
 *  **PORT** = The port the server will listen on *(if this variable is not provided server will default to 3005)*
 *  **API_URL** = URL of the API that will provide data to the frontend app
 
->*Build client side bundle (compiles SASS to CSS and build webpack bundle):*
+>*Build client side bundle (creates dist directory, compiles SASS to CSS, and builds webpack bundle)*
 ```
 npm run build
 ```
