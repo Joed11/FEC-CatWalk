@@ -139,21 +139,27 @@ const IndividualCharacteristics = (props) => {
   const colLeft = {
     gridColumnStart: 1,
     gridColumnEnd: 33,
-    height: '2vw',
-    backgroundImage: 'url(https://i.ibb.co/kc61Vkh/img.png)',
+    height: '1vw',
+    backgroundSize: 'auto',
+    marginTop: '.5vw',
+    backgroundImage: 'url(https://i.ibb.co/kc61Vkh/img.png)'
   };
 
   const colCenter = {
     gridColumnStart: 34,
     gridColumnEnd: 66,
-    height: '2vw',
-    backgroundImage: 'url(https://i.ibb.co/kc61Vkh/img.png)',
+    height: '1vw',
+    backgroundSize: 'auto',
+    marginTop: '.5vw',
+    backgroundImage: 'url(https://i.ibb.co/kc61Vkh/img.png)'
   };
   const colRight = {
     gridColumnStart: 67,
     gridColumnEnd: 99,
-    height: '2vw',
-    backgroundImage: 'url(https://i.ibb.co/kc61Vkh/img.png)',
+    height: '1vw',
+    backgroundSize: 'auto',
+    marginTop: '.5vw',
+    backgroundImage: 'url(https://i.ibb.co/kc61Vkh/img.png)'
   };
 
   const textCenter = {
