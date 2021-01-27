@@ -10,7 +10,7 @@ const Navbar = (props) => {
   return (
       <div className="navbar">
         {redirect}
-        <p className="navbar-header">TEAM ATLANTIC COMPASS</p>
+        <p className="navbar-header">PROJECT CATWALK</p>
         <div className="navbar-searchbar-container">
          <input className="navbar-searchbar" aria-label="searchbar" type="text" onKeyPress={(e)=>changeProduct(e, setRedirect)}>
         </input>
